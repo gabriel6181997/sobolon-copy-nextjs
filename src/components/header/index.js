@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import Image from "next/image";
-import NextLink from 'next/link'; 
+import Link from "next/link";
 import styles from "src/components/header/index.module.scss";
 
 export default function Header() {
