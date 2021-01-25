@@ -1,0 +1,43 @@
+$primary-color:#3EA1D1;
+$font-color:#333;
+
+.header{
+  background: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+
+.header_inner{
+  display: flex;
+  align-items: center;
+}
+
+.nav{
+  margin-left: auto;
+}
+
+.nav_list{
+  display: flex;
+}
+
+.nav_item{
+  &+&{
+    margin-left: 46px;
+  }
+}
+
+.nav_item_link{
+  display: block;
+  color: $font-color;
+  height: 70px;
+  line-height: 70px;
+  letter-spacing: .1em;
+  transition: all 0.3s ease 0;
+
+  &:hover{
+    color: $primary-color;
+  }
+}
