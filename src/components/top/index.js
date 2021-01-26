@@ -4,20 +4,31 @@ import Link from "next/link";
 import styles from "src/components/header/index.module.scss";
 import utilStyles from "src/styles/utils.module.scss";
 
-export function Top() {
+export function Top(){
   return(
-    <h2>Hello World</h2>
 
-    // <section className="top inner">
-    //   <div className="top-picture"></div>
-    //   <div className="top-message">
-    //     <p className="top-message-title">
-    //       “可愛い” で <br className="is_pr" />地球を守る！
-    //     </p>
-    //     <p className="top-message-text">
-    //       海洋マイクロプラスチックを素材とした<br />ハンドメイドアクセサリー「sobolon」
-    //     </p>
-    //   </div>
-    // </section>
-  )
+    <section className={`${styles.top} ${utilStyles.inner}`}>
+      <div
+       styles={{
+         backgroundImage: "url("+ `${require("public/img/top.png")}` +")",
+         paddingTop: "55%",
+         width:"100%",
+         height:"100%",
+         backgroundPosition: "top right",
+         backgroundSize: "82.5%",
+         backgroundRepeat: "no-repeat"
+       }}
+      >
+      </div>
+      <div className={styles.message}>
+        <p className={styles.message_title}>
+          “可愛い” で <br className={utilStyles.is_pr} />地球を守る！
+        </p>
+        <p className={styles.message_text}>
+          海洋マイクロプラスチックを素材とした<br />ハンドメイドアクセサリー「sobolon」
+        </p>
+      </div>
+    </section>
+
+  );
 }

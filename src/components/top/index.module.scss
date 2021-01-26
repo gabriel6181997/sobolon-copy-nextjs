@@ -2,12 +2,12 @@
   position: relative;
 }
 
-.top-picture{
-  padding-top: 55%;
-  background: url(/img/top.png) top right / 82.5% no-repeat;
-}
+// .picture{
+//   padding-top: 55%;
+//   background: url(/img/top.png) top right / 82.5% no-repeat;
+// }
 
-.top-message{
+.message{
   position: absolute;
   left: 0;
   top: 50%;
@@ -16,11 +16,11 @@
   padding: 82px 44px 90px 40px;
 }
 
-.top-message-title{
+.message_title{
   font-size: 26px;
   font-weight: bold;
 }
 
-.top-message-text{
+.message_text{
   margin-top: 18px;
 }
