@@ -6,7 +6,6 @@ import utilStyles from "src/styles/utils.module.scss";
 
 export function Top(){
   return(
-
     <section className={`${styles.top} ${utilStyles.inner}`}>
       <div
        styles={{

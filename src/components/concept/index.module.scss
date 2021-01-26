@@ -1,0 +1,20 @@
+.concept_inner{
+  margin-top: 64px;
+  display: flex;
+  align-items:center;
+}
+
+.picture{
+  flex: 0 0 50%;
+}
+
+.message{
+  flex: 0 1 50%;
+  margin-left: 6.6667%;
+}
+
+.message_title{
+  font-size: 20px;
+  margin-bottom: 48px;
+  font-weight: bold;
+}
