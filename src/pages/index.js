@@ -3,6 +3,8 @@ import {MainLayout} from "src/layouts/main";
 import {Top} from "src/components/top";
 import {Concept} from "src/components/concept";
 import {Feature} from "src/components/feature";
+import {Products} from "src/components/products";
+
 
 
 
@@ -12,6 +14,7 @@ export default function IndexPage() {
       <Top />
       <Concept />
       <Feature />
+      <Products />
     </MainLayout>
   );
 }
