@@ -30,45 +30,21 @@ export function Products() {
     <section id="products" className={`${styles.products} ${utilStyles.section} ${utilStyles.inner}`}>
       <h2 className={utilStyles.util_title}>Products</h2>
       <ul className={styles.list}>
-        <li className="products-item">
-          <a href="#" className="products-item-link">
-            <div className="products-item-picture">
-              <img src="/img/product-1.png" alt="" />
-            </div>
-            <div className="products-item-body">
-              <p className="products-item-title">
-                【しかくイヤリング】海洋マイクロプラスチックを使ったハンドメイドイヤリング(全7色)
-              </p>
-              <p className="products-item-cost">￥3,695</p>
-            </div>
-          </a>
-        </li>
-        <li className="products-item">
-          <a href="#" className="products-item-link">
-            <div className="products-item-picture">
-              <img src="/img/product-2.png" alt="" />
-            </div>
-            <div className="products-item-body">
-              <p className="products-item-title">
-                【しかく指輪】海洋マイクロプラスチックを使ったハンドメイドアクセサリー/ゆびわ(全7色)
-              </p>
-              <p className="products-item-cost">￥2,390</p>
-            </div>
-          </a>
-        </li>
-        <li className="products-item">
-          <a href="#" className="products-item-link">
-            <div className="products-item-picture">
-              <img src="/img/product-3.png" alt="" />
-            </div>
-            <div className="products-item-body">
-              <p className="products-item-title">
-                【ピンバッジ】海洋マイクロプラスチックを使ったsobolonオリジナルピンバッジ(全6色)
-              </p>
-              <p className="products-item-cost">￥2,580</p>
-            </div>
-          </a>
-        </li>
+        {PRODUCTs.map(({src, alt, title, cost}) => (
+          <li className={styles.item}>
+            <Link href="/">
+             <a className={styles.item_link}>
+               <div className={styles.item_picture}>
+                <img src={src} alt={alt}/>
+               </div>
+               <div className={styles.item_body}>
+                 <p>{title}</p>
+                 <p className={styles.item_cost}></p>
+               </div>
+             </a>
+            </Link>
+          </li>
+        ))}
       </ul>
       <div className={styles.footer}>
         <Link href="/">
