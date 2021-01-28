@@ -1,14 +1,14 @@
 import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
-import styles from "src/components/header/index.module.scss";
+import styles from "src/components/top/index.module.scss";
 import utilStyles from "src/styles/utils.module.scss";
 
 export function Top(){
   return(
     <section className={`${styles.top} ${utilStyles.inner}`}>
       <div
-       styles={{
+       style={{
          backgroundImage: "url("+ `${require("public/img/top.png")}` +")",
          paddingTop: "55%",
          width:"100%",

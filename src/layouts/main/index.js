@@ -1,4 +1,5 @@
 import {Header} from "src/components/header";
+import {Footer} from "src/components/footer";
 import styles from "src/layouts/main/index.module.scss";
 
 export function MainLayout({children}) {
@@ -6,6 +7,7 @@ export function MainLayout({children}) {
     <>
      <Header />
      <main className={styles.main}>{children}</main>
+     <Footer  />
     </>
   )
 }
