@@ -4,6 +4,30 @@ import Link from "next/link";
 import styles from "src/components/header/index.module.scss";
 import utilStyles from "src/styles/utils.module.scss";
 
+const NAVITEMS= [
+  {
+    link:"#concept",
+    word: "Concept",
+  },
+  {
+    link:"#feature",
+    word:"Feature",
+  },
+  {
+    link:"#products",
+    word:"Products",
+  },
+  {
+    link:"#news",
+    word:"News",
+
+  },
+  {
+    link:"#contact",
+    word:"Contact",
+  },
+];
+
 export function Header() {
   return(
     <header className={styles.header}>
@@ -13,31 +37,13 @@ export function Header() {
       </h1>
       <nav className={styles.nav}>
         <ul className={styles.nav_list}>
-          <li className={styles.nav_item}>
-            <Link href="#concept">
-              <a className={styles.nav_item_link}>Concept</a>
-            </Link>
-          </li>
-          <li className={styles.nav_item}>
-            <Link href="#feature">
-              <a className={styles.nav_item_link}>Feature</a>
-            </Link>
-          </li>
-          <li className={styles.nav_item}>
-            <Link href="#products">
-              <a className={styles.nav_item_link}>Products</a>
-            </Link>
-          </li>
-          <li className={styles.nav_item}>
-            <Link href="#news">
-              <a className={styles.nav_item_link}>News</a>
-            </Link>
-          </li>
-          <li className={styles.nav_item}>
-            <Link href="#contact">
-              <a className={styles.nav_item_link}>Contact</a>
-            </Link>
-          </li>
+          {NAVITEMS.map(({link, word}) => (
+            <li className={styles.nav_item}>
+              <Link href={link}>
+                <a className={styles.nav_item_link}>{word}</a>
+              </Link>
+            </li>
+          ))}
         </ul>
       </nav>
     </div>
