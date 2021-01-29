@@ -1,4 +1,6 @@
 import React from 'react';
+import { useForm } from "react-hook-form";
+import axios from 'axios';
 import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
@@ -17,12 +19,17 @@ const ContactGoogleForm = {
 const options = ['法人','個人'];
 
 export function Contact() {
+  const { register , handleSubmit} = useForm();
+  const onSubmit = data => {
+    console.log(data)
+  };
+
   return (
     <section id="contact" className={styles.contact}>
       <h2 className={`${utilStyles.util_title} ${styles.section_title}`}>
         Contact
       </h2>
-      <form className={styles.form}>
+      <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
         <p className={styles.text}>
           <span className={styles.text_inline}>＊</span>は入力必須項目です
         </p>
@@ -32,7 +39,7 @@ export function Contact() {
               お名前<span className={styles.item_title_inline}>＊</span>
             </dt>
             <dd className={styles.item_input}>
-              <input type={'text'} name={'name'} required />
+              <input type={'text'} name={'name'} ref={register ({required: true})} />
             </dd>
           </div>
           <div className={styles.item}>
@@ -40,7 +47,7 @@ export function Contact() {
               メールアドレス<span className={styles.item_title_inline}>＊</span>
             </dt>
             <dd className={styles.item_input}>
-              <input type={'email'} name={'emailAddress'} required />
+              <input type={'email'} name={'emailAddress'} ref={register ({required: true})} />
             </dd>
           </div>
           <div className={styles.item}>
@@ -54,9 +61,10 @@ export function Contact() {
                   <label className={styles.radio}>
                     <input
                     type={'radio'}
+                    name={'companyorindividual'}
                     className={styles.radio_input}
                     value={option}
-                    required
+                    ref={register ({required: true})}
                     />
                    <span className={styles.radio_part}>{option}</span>
                   </label>
@@ -70,7 +78,7 @@ export function Contact() {
               <span className={styles.item_title_inline}>＊</span>
             </dt>
             <dd className={styles.item_input}>
-              <textarea required></textarea>
+              <textarea name={'content'} ref={register ({required: true})}></textarea>
             </dd>
           </div>
         </dl>
@@ -79,8 +87,9 @@ export function Contact() {
             <label className={styles.privacy}>
               <input
                 type={'checkbox'}
-                required
+                name={'privacy'}
                 className={styles.privacy_input}
+                ref={register ({required: true})}
               />
               <span className={styles.privacy_part}></span>
             </label>
