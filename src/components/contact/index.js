@@ -1,8 +1,20 @@
+import React from 'react';
 import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "src/components/contact/index.module.scss";
 import utilStyles from "src/styles/utils.module.scss";
+
+const ContactGoogleForm = {
+  action: "https://docs.google.com/forms/u/0/d/e/1FAIpQLSfiL42i6OxLVJb8vaDM5dNqdUa699CEpbMKsSqArbSinup7_Q/formResponse",
+  name:"entry.1085531044",
+  email:"entry.647609485",
+  companyorindividual:"entry.645145015",
+  content:"entry.1262385918",
+  privacy:"entry.1942533298",
+};
+
+const options = ['法人','個人'];
 
 export function Contact() {
   return (
@@ -20,7 +32,7 @@ export function Contact() {
               お名前<span className={styles.item_title_inline}>＊</span>
             </dt>
             <dd className={styles.item_input}>
-              <input type="text" required />
+              <input type={'text'} name={'name'} required />
             </dd>
           </div>
           <div className={styles.item}>
@@ -28,7 +40,7 @@ export function Contact() {
               メールアドレス<span className={styles.item_title_inline}>＊</span>
             </dt>
             <dd className={styles.item_input}>
-              <input type="email" name="emailAddress" required />
+              <input type={'email'} name={'emailAddress'} required />
             </dd>
           </div>
           <div className={styles.item}>
@@ -38,25 +50,17 @@ export function Contact() {
             </dt>
             <dd className={styles.item_input}>
               <div className={styles.radio_wrap}>
-                <label className={styles.radio}>
-                  <input
-                    type="radio"
+                {options.map((option) => (
+                  <label className={styles.radio}>
+                    <input
+                    type={'radio'}
                     className={styles.radio_input}
-                    value="法人"
+                    value={option}
                     required
-                    checked
-                  />
-                  <span className={styles.radio_part}>法人</span>
-                </label>
-                <label className={styles.radio}>
-                  <input
-                    type="radio"
-                    className={styles.radio_input}
-                    value="個人"
-                    required
-                  />
-                  <span className={styles.radio_part}>個人</span>
-                </label>
+                    />
+                   <span className={styles.radio_part}>{option}</span>
+                  </label>
+                ))}
               </div>
             </dd>
           </div>
@@ -74,7 +78,7 @@ export function Contact() {
           <p className={styles.footer_text}>
             <label className={styles.privacy}>
               <input
-                type="checkbox"
+                type={'checkbox'}
                 required
                 className={styles.privacy_input}
               />
@@ -83,8 +87,7 @@ export function Contact() {
             <Link href="/">
               <a
                 className={styles.privacy_link}
-                target="_blank"
-                value="プライバシーポリシーの同意"
+                value={'プライバシーポリシーの同意'}
               >
                 プライバシーポリシー
               </a>
@@ -93,10 +96,8 @@ export function Contact() {
           </p>
           <div className={styles.footer_submit}>
             <button
-              id="js-submit"
               className={utilStyles.util_link}
-              type="submit"
-              disabled
+              type={'submit'}
             >
               送信
             </button>
