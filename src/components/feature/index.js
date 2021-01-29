@@ -28,7 +28,7 @@ export function Feature() {
     <h2 className={utilStyles.util_title}>Feature</h2>
     <ul className={styles.list}>
       {ITEMS.map(({src, title, name}) => (
-        <li className={styles.item}>
+        <li className={styles.item} key={title}>
           <Link href="/">
             <a className={styles.item_link}>
              <div className={styles.item_picture}>

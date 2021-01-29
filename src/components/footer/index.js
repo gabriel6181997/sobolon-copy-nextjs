@@ -38,7 +38,7 @@ export function Footer() {
 
       <ul className={styles.nav_list}>
         {NAVITEMS.map(({title}) => (
-          <li className={styles.nav_item}>
+          <li className={styles.nav_item} key={title}>
             <Link href="/">
               <a className={styles.nav_item_link}>
                {title}
@@ -50,7 +50,7 @@ export function Footer() {
 
       <ul className={styles.sns_list}>
         {SNSITEMS.map(({arialabel, icon}) => (
-          <li className={styles.sns_item}>
+          <li className={styles.sns_item} key={arialabel}>
             <Link href="/">
               <a className={styles.sns_item_link} aria-label={arialabel}>
                 {icon}

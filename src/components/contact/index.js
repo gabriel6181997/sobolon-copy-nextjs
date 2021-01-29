@@ -19,10 +19,9 @@ const ContactGoogleForm = {
 const options = ['法人','個人'];
 
 export function Contact() {
-  const { register , handleSubmit} = useForm();
-  const onSubmit = data => {
-    console.log(data)
-  };
+  const { register , handleSubmit} = useForm({
+    mode:'onChange',
+  });
 
   return (
     <section id="contact" className={styles.contact}>
@@ -47,7 +46,7 @@ export function Contact() {
               メールアドレス<span className={styles.item_title_inline}>＊</span>
             </dt>
             <dd className={styles.item_input}>
-              <input type={'email'} name={'emailAddress'} ref={register ({required: true})} />
+              <input type={'email'} name={'email'} ref={register ({required: true})} />
             </dd>
           </div>
           <div className={styles.item}>
@@ -58,7 +57,7 @@ export function Contact() {
             <dd className={styles.item_input}>
               <div className={styles.radio_wrap}>
                 {options.map((option) => (
-                  <label className={styles.radio}>
+                  <label className={styles.radio} key={option}>
                     <input
                     type={'radio'}
                     name={'companyorindividual'}
@@ -122,3 +121,28 @@ export function Contact() {
     </section>
   );
 }
+
+const onSubmit = (values) => {
+  console.log(values)
+  const GOOGLE_FORM_ACTION = ContactGoogleForm.action;
+  const CORS_PROXY = 'https://cors-anywhere.herokuapp.com/';
+
+  //PostのParam生成
+  const submitParams = new FormData();
+  submitParams.append(ContactGoogleForm.name, values.name);
+  submitParams.append(ContactGoogleForm.email, values.email);
+  submitParams.append(ContactGoogleForm.companyorindividual, values.companyorindividual);
+  submitParams.append(ContactGoogleForm.content, values.content);
+  submitParams.append(ContactGoogleForm.privacy, values.privacy);
+
+  //実行
+  axios
+   .post(CORS_PROXY + GOOGLE_FORM_ACTION, submitParams)
+   .then(() => {
+     console.log('Success')
+   })
+   .catch((error) => {
+     console.log('error')
+   })
+};
+

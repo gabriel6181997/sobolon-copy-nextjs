@@ -37,7 +37,7 @@ export function News() {
       <h2 className={utilStyles.util_title}>News</h2>
       <div className={styles.list}>
         {NEWSITEMS.map(({src, alt, datetime, date, title, text}) => (
-          <article className={styles.item}>
+          <article className={styles.item} key={title}>
             <Link href="/">
               <a className={styles.item_link}>
                 <div className={styles.item_header}>
@@ -47,7 +47,7 @@ export function News() {
                 </div>
                 <div className={styles.item_body}>
                   <p>
-                    <time datetime={datetime}>{date}</time>
+                    <time dateTime={datetime}>{date}</time>
                   </p>
                   <h3 className={styles.item_title}>{title}</h3>
                   <p className={styles.item_text}>{text}</p>

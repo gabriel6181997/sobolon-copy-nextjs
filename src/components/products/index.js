@@ -31,7 +31,7 @@ export function Products() {
       <h2 className={utilStyles.util_title}>Products</h2>
       <ul className={styles.list}>
         {PRODUCTs.map(({src, alt, title, cost}) => (
-          <li className={styles.item}>
+          <li className={styles.item} key={title}>
             <Link href="/">
              <a className={styles.item_link}>
                <div className={styles.item_picture}>

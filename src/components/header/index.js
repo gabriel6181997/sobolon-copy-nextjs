@@ -38,7 +38,7 @@ export function Header() {
       <nav className={styles.nav}>
         <ul className={styles.nav_list}>
           {NAVITEMS.map(({link, word}) => (
-            <li className={styles.nav_item}>
+            <li className={styles.nav_item} key={word}>
               <Link href={link}>
                 <a className={styles.nav_item_link}>{word}</a>
               </Link>
