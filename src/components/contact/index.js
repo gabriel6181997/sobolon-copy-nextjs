@@ -126,14 +126,14 @@ const onSubmit = (values) => {
   console.log(values)
   const GOOGLE_FORM_ACTION = ContactGoogleForm.action;
   // const CORS_PROXY = 'https://cors-anywhere.herokuapp.com/';
-  const CORS_PROXY = new XMLHttpRequest();
-  CORS_PROXY.open('GET', 'https://cors-anywhere.herokuapp.com/https://example.com');
-  CORS_PROXY.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
-  CORS_PROXY.onload = function() {
-    // alert(CORS_PROXY.responseText);
-    alert('DONE');
-  };
-  CORS_PROXY.send();
+  // const CORS_PROXY = new XMLHttpRequest();
+  // CORS_PROXY.open('GET', 'https://cors-anywhere.herokuapp.com/https://example.com');
+  // CORS_PROXY.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+  // CORS_PROXY.onload = function() {
+  //   // alert(CORS_PROXY.responseText);
+  //   alert('DONE');
+  // };
+  // CORS_PROXY.send();
 
 
   //PostのParam生成
@@ -147,8 +147,10 @@ const onSubmit = (values) => {
   // console.log( new FormData())
 
   //実行
+  axios.defaults.headers['X-Requested-With'] = 'XMLHttpRequest';
   axios
-   .post(CORS_PROXY + GOOGLE_FORM_ACTION, submitParams)
+  //  .post(CORS_PROXY + GOOGLE_FORM_ACTION, submitParams)
+   .post(GOOGLE_FORM_ACTION, submitParams)
    .then(() => {
      console.log('success');
    })
