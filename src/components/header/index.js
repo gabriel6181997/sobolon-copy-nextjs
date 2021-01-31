@@ -6,24 +6,24 @@ import utilStyles from "src/styles/utils.module.scss";
 
 const NAVITEMS= [
   {
-    link:"#concept",
+    link:"/#concept",
     word: "Concept",
   },
   {
-    link:"#feature",
+    link:"/#feature",
     word:"Feature",
   },
   {
-    link:"#products",
+    link:"/#products",
     word:"Products",
   },
   {
-    link:"#news",
+    link:"/#news",
     word:"News",
 
   },
   {
-    link:"#contact",
+    link:"/#contact",
     word:"Contact",
   },
 ];
