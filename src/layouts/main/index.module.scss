@@ -1,3 +1,25 @@
+$breakpoints:(
+  'sm': 'screen and (max-width: 767px)',
+  'md': 'screen and (min-width: 768px)',
+) !default;
+
+
+// MediaQuery
+@mixin mq($breakpoint: sp) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+//colors
+$primary-color:#3EA1D1;
+$font-color:#333;
+
+
 .main{
   padding-top: 70px;
+
+  @include mq('sm'){
+    padding-top: 60px;
+  }
 }

@@ -1,19 +1,50 @@
+$breakpoints:(
+  'sm': 'screen and (max-width: 767px)',
+  'md': 'screen and (min-width: 768px)',
+) !default;
+
+
+// MediaQuery
+@mixin mq($breakpoint: sp) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
 $primary-color:#3EA1D1;
 $font-color:#333;
 
 .products{
   max-width: 940px;
+
+  @include mq('sm'){
+    max-width: 340px;
+    padding: 0 58px;
+  }
 }
 
 .list{
-  margin-top: 64px;
-  display: flex;
-  justify-content: space-between;
+  @include mq('md'){
+    display: flex;
+    justify-content: space-between;
+    margin-top: 64px;
+  }
 
+  @include mq('sm'){
+    margin-top: 48px;
+  }
 }
 
 .item{
-  flex: 0 0 27.6%;
+  @include mq('md'){
+    flex: 0 0 27.6%;
+  }
+
+  @include mq('sm'){
+    & + &{
+      margin-top: 40px;
+    }
+  }
 }
 
 .item_link{
@@ -21,9 +52,11 @@ $font-color:#333;
   color: $font-color;
   font-size: 14px;
 
-  &:hover{
-    .item_picture > img{
-      transform: scale(1.05);
+  @include mq('md'){
+    &:hover{
+      .item_picture > img{
+        transform: scale(1.05);
+      }
     }
   }
 }
@@ -38,6 +71,10 @@ $font-color:#333;
 
 .item_body{
   margin-top: 24px;
+
+  @include mq('sm'){
+   font-size: 14px;
+  }
 }
 
 .item_cost{
@@ -48,4 +85,8 @@ $font-color:#333;
 .footer{
   text-align: center;
   margin-top: 48px;
+
+  @include mq('sm'){
+    margin-top: 42px;
+  }
 }

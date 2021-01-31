@@ -1,6 +1,32 @@
+$breakpoints:(
+  'sm': 'screen and (max-width: 767px)',
+  'md': 'screen and (min-width: 768px)',
+) !default;
+
+
+// MediaQuery
+@mixin mq($breakpoint: sp) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+//colors
+$primary-color:#3EA1D1;
+$font-color:#333;
+
+
 .about{
-  background: url(/img/bg.png) center center / cover;
-  padding: 126px 0;
+  @include mq('md'){
+    background: url(/img/bg.png) center center / cover;
+    padding: 126px 0;
+  }
+
+  @include mq('sm'){
+    background: url(/img/sp/bg.png) center center / cover;
+    padding: 182px 0 55px;
+  }
+
   color: #fff;
   position: relative;
 
@@ -23,8 +49,17 @@
 .title{
   font-size: 22px;
   font-weight: bold;
+
+  @include mq('sm'){
+    font-size: 20px;
+  }
 }
 
 .text{
   margin-top: 28px;
+
+  @include mq('sm'){
+    font-size: 14px;
+    margin-top: 22px;
+  }
 }

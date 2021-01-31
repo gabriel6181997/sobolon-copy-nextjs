@@ -1,9 +1,26 @@
+$breakpoints:(
+  'sm': 'screen and (max-width: 767px)',
+  'md': 'screen and (min-width: 768px)',
+) !default;
+
+
+// MediaQuery
+@mixin mq($breakpoint: sp) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
 $primary-color:#3EA1D1;
 $font-color:#333;
 
 .footer{
   background:#F7F7F7;
   padding: 48px 0 16px;
+
+  @include mq('sm'){
+    padding: 36px 0 16px;
+  }
 }
 
 .logo{
@@ -12,14 +29,27 @@ $font-color:#333;
 }
 
 .nav_list{
-  display: flex;
-  justify-content: center;
-  margin-top: 8px;
+  @include mq('md'){
+    display: flex;
+    justify-content: center;
+  }
+
+  @include mq('sm'){
+    margin-top: 16px;
+  }
 }
 
 
 .nav_item{
-  margin-left: 30px;
+  @include mq('md'){
+    &+&{
+      margin-left: 30px;
+    }
+  }
+
+  @include mq('sm'){
+    text-align: center;
+  }
 }
 
 .nav_item_link{
@@ -29,9 +59,16 @@ $font-color:#333;
   padding: 1em 0;
   transition: opacity .4s;
 
-  &:hover{
-    opacity: 0.7;
+  @include mq('md'){
+    &:hover{
+      opacity: 0.7;
+    }
   }
+
+  @include mq('sm'){
+    padding: .3em 0;
+  }
+
 }
 
 .sns_list{
@@ -51,8 +88,11 @@ $font-color:#333;
   color: $primary-color;
   font-size:24px;
   transition: opacity .4s;
-  &:hover{
-      opacity: 0.7;
+
+  @include mq('md'){
+    &:hover{
+        opacity: 0.7;
+    }
   }
 }
 
@@ -61,5 +101,9 @@ $font-color:#333;
   font-size: 12px;
   margin-top: 24px;
   color: #888888;
+
+  @include mq('sm'){
+    margin-top: 5px;
+  }
 }
 

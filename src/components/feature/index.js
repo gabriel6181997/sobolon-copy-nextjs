@@ -24,7 +24,7 @@ const ITEMS = [
 
 export function Feature() {
   return(
-    <section id="feature" className={`${utilStyles.section} ${utilStyles.inner}`}>
+    <section id="feature" className={`${utilStyles.section} ${utilStyles.inner} ${styles.feature}`}>
     <h2 className={utilStyles.util_title}>Feature</h2>
     <ul className={styles.list}>
       {ITEMS.map(({src, title, name}) => (

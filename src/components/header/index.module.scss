@@ -1,3 +1,19 @@
+// @import "utils.module.scss";
+
+$breakpoints:(
+  'sm': 'screen and (max-width: 767px)',
+  'md': 'screen and (min-width: 768px)',
+) !default;
+
+
+// MediaQuery
+@mixin mq($breakpoint: sp) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+//colors
 $primary-color:#3EA1D1;
 $font-color:#333;
 
@@ -13,10 +29,20 @@ $font-color:#333;
 .header_inner{
   display: flex;
   align-items: center;
+
+  @include mq('sm'){
+    height: 60px;
+  }
 }
 
 .nav{
-  margin-left: auto;
+  @include mq('md'){
+    margin-left: auto;
+  }
+
+  @include mq('sm'){
+    display: none;
+  }
 }
 
 .nav_list{

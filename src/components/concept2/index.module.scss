@@ -1,22 +1,58 @@
-.concept2_inner{
-  display: flex;
-  flex-direction: row-reverse;
-  align-items: center;
+$breakpoints:(
+  'sm': 'screen and (max-width: 767px)',
+  'md': 'screen and (min-width: 768px)',
+) !default;
 
+
+// MediaQuery
+@mixin mq($breakpoint: sp) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+//colors
+$primary-color:#3EA1D1;
+$font-color:#333;
+
+
+.concept2_inner{
+  @include mq('md'){
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+  }
 }
 
 .picture{
-  flex: 0 0 50%;
-  margin-left: 6.6667%;
+  @include mq('md'){
+    flex: 0 0 50%;
+    margin-left: 6.6667%;
+  }
 }
 
 .message{
-  flex: 0 1 50%;
+  @include mq('md'){
+    flex: 0 1 50%;
+  }
+
+  margin-top: 40px;
 }
 
 .message_title{
   font-size: 28px;
   font-weight: bold;
   margin-bottom: 28px;
+
+  @include mq('md'){
+    font-size: 20px;
+  }
+}
+
+.message_text{
+  @include mq('sm'){
+    font-size: 14px;
+    line-height: (24/14);
+  }
 }
 
