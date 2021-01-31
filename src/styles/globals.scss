@@ -66,6 +66,12 @@ body{
   line-height: 1.6875;
 }
 
+@media screen and (max-width: 767px){
+  body{
+    height: 1500px;
+  }
+}
+
 img{
   width: 100%;
 }

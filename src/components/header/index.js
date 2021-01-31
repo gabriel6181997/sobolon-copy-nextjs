@@ -31,8 +31,8 @@ const NAVITEMS= [
 export function Header() {
   return(
     <header className={styles.header}>
-    <div className={`${styles.header_inner} ${utilStyles.inner}`}>
-      <h1>
+    <div className={styles.header_inner}>
+      <h1 className={styles.logo}>
         <Image src="/img/logo.png" alt="sobolon" width={120} height={22}/>
       </h1>
       <nav className={styles.nav}>

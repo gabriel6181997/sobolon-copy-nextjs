@@ -27,11 +27,26 @@ $font-color:#333;
 }
 
 .header_inner{
-  display: flex;
-  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: content-box;
+
+  @include mq('md'){
+    display: flex;
+    align-items: center;
+    padding: 0 40px;
+  }
 
   @include mq('sm'){
     height: 60px;
+    padding: 0;
+  }
+}
+
+.logo{
+  @include mq('sm'){
+    text-align: center;
+    padding-top: 15px;
   }
 }
 
@@ -41,8 +56,11 @@ $font-color:#333;
   }
 
   @include mq('sm'){
-    display: none;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
   }
+
 }
 
 .nav_list{
@@ -50,20 +68,39 @@ $font-color:#333;
 }
 
 .nav_item{
-  &+&{
-    margin-left: 46px;
+  @include mq('md'){
+    &+&{
+      margin-left: 46px;
+    }
   }
+
+  @include mq('sm'){
+    flex: 1;
+  }
+
 }
 
 .nav_item_link{
   display: block;
   color: $font-color;
-  height: 70px;
-  line-height: 70px;
   letter-spacing: .1em;
   transition: all 0.3s ease 0;
 
-  &:hover{
-    color: $primary-color;
+  @include mq('md'){
+    height: 70px;
+    line-height: 70px;
+    &:hover{
+      color: $primary-color;
+    }
   }
+
+  @include mq('sm'){
+    height: 50px;
+    line-height: 50px;
+    background-color:#fff;
+    color: #333333;
+    text-align: center;
+    font-size: 14px;
+  }
+
 }
