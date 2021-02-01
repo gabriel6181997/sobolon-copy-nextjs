@@ -3,6 +3,10 @@
 /*==========================================================================
 # reset - ブラウザの差異や不要なスタイルを無くすためのスタイル
 ========================================================================== */
+
+$top-pc: 70px;
+$top-mb: 50px;
+
 * {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -19,8 +23,13 @@ html, body, h1, h2, h3, h4, h5, h6, ul, ol, dl, li, dt, dd, p, div, span, img, a
 
 html {
   line-height: 1;
-  // overflow-y: scroll;
-  // scroll-behavior: smooth;
+  scroll-behavior: smooth;
+  scroll-padding-top: $top-pc;
+
+  @media screen and (max-width: 767px){
+    scroll-padding-bottom: $top-mb;
+
+  }
 }
 
 ol, ul {
@@ -65,13 +74,13 @@ body{
   color: $font-color;
   font-family: 'ヒラギノ明朝 ProN', serif;
   line-height: 1.6875;
-}
 
-@media screen and (max-width: 767px){
-  body{
-    height: 1500px;
+  @media screen and (max-width: 767px){
+  height: 1500px;
+  padding-bottom: $top-mb;
   }
 }
+
 
 img{
   width: 100%;

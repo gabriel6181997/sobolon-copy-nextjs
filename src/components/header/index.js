@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "src/components/header/index.module.scss";
 import utilStyles from "src/styles/utils.module.scss";
-import LinkSmoothScroll from 'src/library/SmoothScroll/LinkSmoothScroll.js';
 
 const NAVITEMS= [
   {
@@ -39,9 +38,9 @@ export function Header() {
         <ul className={styles.nav_list}>
           {NAVITEMS.map(({link, word}) => (
             <li className={styles.nav_item} key={word}>
-              <LinkSmoothScroll href={link}>
+              <Link href={link}>
                 <a className={styles.nav_item_link}>{word}</a>
-              </LinkSmoothScroll>
+              </Link>
             </li>
           ))}
         </ul>
