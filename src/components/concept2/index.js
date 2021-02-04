@@ -8,10 +8,10 @@ export function Concept2() {
   return (
     <div className={`${styles.comcept2} ${utilStyles.inner} ${utilStyles.section}`}>
       <div className={styles.concept2_inner}>
-        <div className={styles.picture}>
+        <picture className={`${styles.picture} ${"wow fadeInUp"}`}>
           <img src="/img/concept-2.png" alt="concept-2" />
-        </div>
-        <div className={styles.message}>
+        </picture>
+        <div className={`${styles.message} ${"wow fadeInUp"}`}>
           <p className={styles.message_title}>
             合言葉は、
             <br />「 “可愛い” で 地球を守る！」

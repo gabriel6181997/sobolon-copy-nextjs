@@ -25,10 +25,10 @@ export function Contact() {
 
   return (
     <section id="contact" className={styles.contact}>
-      <h2 className={`${utilStyles.util_title} ${styles.section_title}`}>
+      <h2 className={`${utilStyles.util_title} ${styles.section_title} ${"wow fadeInUp"}`}>
         Contact
       </h2>
-      <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
+      <form className={`${styles.form} ${"wow fadeInUp"}`} onSubmit={handleSubmit(onSubmit)}>
         <p className={styles.text}>
           <span className={styles.text_inline}>＊</span>は入力必須項目です
         </p>

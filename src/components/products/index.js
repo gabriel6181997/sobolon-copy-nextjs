@@ -28,8 +28,8 @@ const PRODUCTs = [
 export function Products() {
   return (
     <section id="products" className={`${styles.products} ${utilStyles.section} ${utilStyles.inner}`}>
-      <h2 className={utilStyles.util_title}>Products</h2>
-      <ul className={styles.list}>
+      <h2 className={`${utilStyles.util_title} ${"wow fadeInUp"}`}>Products</h2>
+      <ul className={`${styles.list} ${"wow fadeInUp"}`}>
         {PRODUCTs.map(({src, alt, title, cost}) => (
           <li className={styles.item} key={title}>
             <Link href="/">
@@ -48,7 +48,7 @@ export function Products() {
       </ul>
       <div className={styles.footer}>
         <Link href="/">
-          <a className={utilStyles.util_link}>More</a>
+          <a className={`${utilStyles.util_link} ${"wow fadeInUp"}`}>More</a>
         </Link>
       </div>
     </section>

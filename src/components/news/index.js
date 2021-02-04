@@ -34,8 +34,8 @@ const NEWSITEMS = [
 export function News() {
   return (
     <section id="news" className={`${utilStyles.section} ${utilStyles.inner} ${styles.news}`}>
-      <h2 className={utilStyles.util_title}>News</h2>
-      <div className={styles.list}>
+      <h2 className={`${utilStyles.util_title} ${"wow fadeInUp"}`}>News</h2>
+      <div className={`${styles.list} ${"wow fadeInUp"}`}>
         {NEWSITEMS.map(({src, alt, datetime, date, title, text}) => (
           <article className={styles.item} key={title}>
             <Link href="/">
@@ -59,7 +59,7 @@ export function News() {
       </div>
       <div className={styles.footer}>
         <Link href="/">
-          <a className={utilStyles.util_link}>MORE</a>
+          <a className={`${utilStyles.util_link} ${"wow fadeInUp"}`}>MORE</a>
         </Link>
       </div>
     </section>

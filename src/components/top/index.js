@@ -9,8 +9,8 @@ import Head from "next/head";
 export function Top(){
   return(
     <section className={`${styles.top} ${utilStyles.inner}`}>
-      <div className={styles.picture}></div>
-      <div className={styles.message}>
+      <div className={`${styles.picture} ${"wow fadeInUp"}`}></div>
+      <div className={`${styles.message} ${"wow fadeInUp"}`}>
         <p className={styles.message_title}>
           “可愛い” で <br className={utilStyles.is_pr} />地球を守る！
         </p>

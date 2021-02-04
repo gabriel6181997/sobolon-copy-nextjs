@@ -7,7 +7,7 @@ import utilStyles from "src/styles/utils.module.scss";
 export function About() {
   return (
     <div className={`${styles.about} ${utilStyles.section}`}>
-      <div className={`${styles.about_inner} ${utilStyles.inner}`}>
+      <div className={`${styles.about_inner} ${utilStyles.inner} ${"wow fadeInUp"}`}>
         <p className={styles.title}>
           消費者である私たちが、 <br />
           地球環境のためにできることは何か？

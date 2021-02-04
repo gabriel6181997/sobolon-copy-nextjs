@@ -25,8 +25,8 @@ const ITEMS = [
 export function Feature() {
   return(
     <section id="feature" className={`${utilStyles.section} ${utilStyles.inner} ${styles.feature}`}>
-    <h2 className={utilStyles.util_title}>Feature</h2>
-    <ul className={styles.list}>
+    <h2 className={`${utilStyles.util_title} ${"wow fadeInUp"}`}>Feature</h2>
+    <ul className={`${styles.list} ${"wow fadeInUp"}`}>
       {ITEMS.map(({src, title, name}) => (
         <li className={styles.item} key={title}>
           <Link href="/">
