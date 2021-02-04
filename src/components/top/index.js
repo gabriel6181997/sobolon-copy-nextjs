@@ -4,8 +4,6 @@ import Link from "next/link";
 import styles from "src/components/top/index.module.scss";
 import utilStyles from "src/styles/utils.module.scss";
 import Head from "next/head";
-import React, { useState, useEffect } from "react";
-import WOW from "wow.js";
 
 
 export function Top(){

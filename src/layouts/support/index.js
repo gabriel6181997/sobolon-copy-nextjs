@@ -11,7 +11,6 @@ export function SupportLayout({ children }) {
       <Head>
         <title>sobolon - 海洋マイクロプラスチックを素材とした ハンドメイドアクセサリー</title>
         <meta name="description" content="サイトの概要文" />
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css"/>
       </Head>
       <Header />
       <main className={styles.main}>{children}</main>
