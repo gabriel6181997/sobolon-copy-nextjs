@@ -138,14 +138,13 @@ const onSubmit = (values) => {
   submitParams.append(ContactGoogleForm.privacy, values.privacy);
 
   //実行
-  axios.defaults.headers['X-Requested-With'] = 'XMLHttpRequest';
   axios
    .post(CORS_PROXY + GOOGLE_FORM_ACTION, submitParams)
    .then(() => {
      console.log('success');
    })
    .catch((error) => {
-     console.log('error');
+     console.log(error);
    })
 };
 
