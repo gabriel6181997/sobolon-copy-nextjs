@@ -9,11 +9,18 @@ import utilStyles from "src/styles/utils.module.scss";
 
 const ContactGoogleForm = {
   action: "https://docs.google.com/forms/u/0/d/e/1FAIpQLSfiL42i6OxLVJb8vaDM5dNqdUa699CEpbMKsSqArbSinup7_Q/formResponse",
+  //second group data
   name:"entry.1460987795",
   email:"entry.647609485",
   companyorindividual:"entry.645145015",
   content:"entry.1262385918",
   privacy:"entry.1942533298",
+  //first group data
+  // name: "entry.1085531044",
+  // entry:"entry.1401498924",
+  // companyorindividual:"entry.1207389550",
+  // content:"entry.2124564471",
+  // privacy:"entry.148404486"
 };
 
 const options = ['法人','個人'];
