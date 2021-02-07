@@ -45,7 +45,10 @@ export function Contact() {
               お名前<span className={styles.item_title_inline}>＊</span>
             </dt>
             <dd className={styles.item_input}>
-              <input type={'text'} name={'name'} ref={register ({required: true})} />
+              <input type={'text'} name={'name'}
+              // ref={register ({required: true})}
+              ref={register ({})}
+              />
             </dd>
           </div>
           <div className={styles.item}>
@@ -53,7 +56,10 @@ export function Contact() {
               メールアドレス<span className={styles.item_title_inline}>＊</span>
             </dt>
             <dd className={styles.item_input}>
-              <input type={'email'} name={'email'} ref={register ({required: true})} />
+              <input type={'email'} name={'email'}
+              ref={register ({})}
+              // ref={register ({required: true})}
+              />
             </dd>
           </div>
           <div className={styles.item}>
@@ -70,7 +76,8 @@ export function Contact() {
                     name={'companyorindividual'}
                     className={styles.radio_input}
                     value={option}
-                    ref={register ({required: true})}
+                    ref={register ({})}
+                    // ref={register ({required: true})}
                     />
                    <span className={styles.radio_part}>{option}</span>
                   </label>
@@ -84,7 +91,10 @@ export function Contact() {
               <span className={styles.item_title_inline}>＊</span>
             </dt>
             <dd className={styles.item_input}>
-              <textarea name={'content'} ref={register ({required: true})}></textarea>
+              <textarea name={'content'}
+              ref={register ({})}
+              // ref={register ({required: true})}
+              ></textarea>
             </dd>
           </div>
         </dl>
@@ -95,7 +105,8 @@ export function Contact() {
                 type={'checkbox'}
                 name={'privacy'}
                 className={styles.privacy_input}
-                ref={register ({required: true})}
+                // ref={register ({required: true})}
+                ref={register ({})}
               />
               <span className={styles.privacy_part}></span>
             </label>
@@ -130,7 +141,7 @@ export function Contact() {
 }
 
 const onSubmit = (values) => {
-  console.log(values)
+  // console.log(values)
   const GOOGLE_FORM_ACTION = ContactGoogleForm.action;
 
   //CORS_PROXY
@@ -154,10 +165,10 @@ const onSubmit = (values) => {
 
   //実行
   axios
-  //  .post(CORS_PROXY + GOOGLE_FORM_ACTION, submitParams)
   // .post(GOOGLE_FORM_ACTION, submitParams, config)
   //  .post(CORS_PROXY + GOOGLE_FORM_ACTION, submitParams, config)
-   .post(GOOGLE_FORM_ACTION, submitParams)
+  .post(GOOGLE_FORM_ACTION, submitParams)
+  //  .post(GOOGLE_FORM_ACTION, submitParams)
    .then(() => {
      console.log('success');
    })
