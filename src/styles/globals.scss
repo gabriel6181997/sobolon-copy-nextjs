@@ -1,4 +1,5 @@
 @charset "utf-8";
+@import "mixins";
 
 /*==========================================================================
 # reset - ブラウザの差異や不要なスタイルを無くすためのスタイル
@@ -26,9 +27,8 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: $top-pc;
 
-  @media screen and (max-width: 767px){
+  @include mq('sm'){
     scroll-padding-bottom: $top-mb;
-
   }
 }
 
@@ -75,9 +75,9 @@ body{
   font-family: 'ヒラギノ明朝 ProN', serif;
   line-height: 1.6875;
 
-  @media screen and (max-width: 767px){
-  height: 1500px;
-  padding-bottom: $top-mb;
+  @include mq('sm'){
+    height: 1500px;
+    padding-bottom: $top-mb;
   }
 }
 

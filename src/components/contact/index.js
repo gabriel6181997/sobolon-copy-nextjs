@@ -130,16 +130,26 @@ const onSubmit = (values) => {
   const CORS_PROXY = 'https://cors-anywhere.herokuapp.com/';
 
   //PostのParam生成
-  const submitParams = new FormData();
+  // const submitParams = new FormData();
+  const submitParams = new URLSearchParams()
   submitParams.append(ContactGoogleForm.name, values.name);
   submitParams.append(ContactGoogleForm.email, values.email);
   submitParams.append(ContactGoogleForm.companyorindividual, values.companyorindividual);
   submitParams.append(ContactGoogleForm.content, values.content);
   submitParams.append(ContactGoogleForm.privacy, values.privacy);
 
+  //JSONデータをapplication/x-www-form-urlencodedに変える
+  const config = {
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded'
+    }
+  }
+
   //実行
   axios
-   .post(CORS_PROXY + GOOGLE_FORM_ACTION, submitParams)
+  //  .post(CORS_PROXY + GOOGLE_FORM_ACTION, submitParams)
+  // .post(GOOGLE_FORM_ACTION, submitParams, config)
+   .post(CORS_PROXY + GOOGLE_FORM_ACTION, submitParams, config)
    .then(() => {
      console.log('success');
    })
@@ -148,3 +158,4 @@ const onSubmit = (values) => {
    })
 };
 
+// let body = {'someArray': encodeURIComponent(JSON.stringify(["a", 1])), 'someNumber': encodeURIComponent(JSON.stringify(1))}
