@@ -9,7 +9,7 @@ import utilStyles from "src/styles/utils.module.scss";
 
 const ContactGoogleForm = {
   action: "https://docs.google.com/forms/u/0/d/e/1FAIpQLSfiL42i6OxLVJb8vaDM5dNqdUa699CEpbMKsSqArbSinup7_Q/formResponse",
-  name:"entry.1085531044",
+  name:"entry.1460987795",
   email:"entry.647609485",
   companyorindividual:"entry.645145015",
   content:"entry.1262385918",
@@ -145,6 +145,8 @@ const onSubmit = (values) => {
     }
   }
 
+  console.log(URLSearchParams);
+
   //実行
   axios
   //  .post(CORS_PROXY + GOOGLE_FORM_ACTION, submitParams)
@@ -158,4 +160,3 @@ const onSubmit = (values) => {
    })
 };
 
-// let body = {'someArray': encodeURIComponent(JSON.stringify(["a", 1])), 'someNumber': encodeURIComponent(JSON.stringify(1))}
