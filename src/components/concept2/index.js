@@ -1,4 +1,3 @@
-import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "src/components/concept2/index.module.scss";

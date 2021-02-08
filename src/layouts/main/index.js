@@ -1,5 +1,4 @@
 import { NextSeo } from 'next-seo';
-import clsx from "clsx";
 import { Header } from "src/components/header";
 import { Footer } from "src/components/footer";
 import styles from "src/layouts/main/index.module.scss";
@@ -27,4 +26,4 @@ export function MainLayout({ children }) {
       <Footer />
     </>
   );
-}
+};

@@ -1,27 +1,19 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
 import axios from 'axios';
-import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "src/components/contact/index.module.scss";
 import utilStyles from "src/styles/utils.module.scss";
 
-const ContactGoogleForm = {
-  action: "https://docs.google.com/forms/u/0/d/e/1FAIpQLSfiL42i6OxLVJb8vaDM5dNqdUa699CEpbMKsSqArbSinup7_Q/formResponse",
-  //second group data
-  name:"entry.1460987795",
-  email:"entry.647609485",
-  companyorindividual:"entry.645145015",
-  content:"entry.1262385918",
-  privacy:"entry.1942533298",
-  //first group data
-  // name: "entry.1085531044",
-  // entry:"entry.1401498924",
-  // companyorindividual:"entry.1207389550",
-  // content:"entry.2124564471",
-  // privacy:"entry.148404486"
-};
+// const ContactGoogleForm = {
+//   action: "https://docs.google.com/forms/u/0/d/e/1FAIpQLSfiL42i6OxLVJb8vaDM5dNqdUa699CEpbMKsSqArbSinup7_Q/formResponse",
+//   name:"entry.1460987795",
+//   email:"entry.647609485",
+//   companyorindividual:"entry.645145015",
+//   content:"entry.1262385918",
+//   privacy:"entry.1942533298",
+// };
 
 const options = ['法人','個人'];
 
@@ -46,8 +38,7 @@ export function Contact() {
             </dt>
             <dd className={styles.item_input}>
               <input type={'text'} name={'name'}
-              // ref={register ({required: true})}
-              ref={register ({})}
+              ref={register ({required: true})}
               />
             </dd>
           </div>
@@ -57,8 +48,7 @@ export function Contact() {
             </dt>
             <dd className={styles.item_input}>
               <input type={'email'} name={'email'}
-              ref={register ({})}
-              // ref={register ({required: true})}
+              ref={register ({required: true})}
               />
             </dd>
           </div>
@@ -76,8 +66,7 @@ export function Contact() {
                     name={'companyorindividual'}
                     className={styles.radio_input}
                     value={option}
-                    ref={register ({})}
-                    // ref={register ({required: true})}
+                    ref={register ({required: true})}
                     />
                    <span className={styles.radio_part}>{option}</span>
                   </label>
@@ -92,8 +81,7 @@ export function Contact() {
             </dt>
             <dd className={styles.item_input}>
               <textarea name={'content'}
-              ref={register ({})}
-              // ref={register ({required: true})}
+              ref={register ({required: true})}
               ></textarea>
             </dd>
           </div>
@@ -105,8 +93,7 @@ export function Contact() {
                 type={'checkbox'}
                 name={'privacy'}
                 className={styles.privacy_input}
-                // ref={register ({required: true})}
-                ref={register ({})}
+                ref={register ({required: true})}
               />
               <span className={styles.privacy_part}></span>
             </label>
@@ -141,39 +128,36 @@ export function Contact() {
 }
 
 const onSubmit = (values) => {
-  // console.log(values)
-  const GOOGLE_FORM_ACTION = ContactGoogleForm.action;
+  console.log(values)
+  // const GOOGLE_FORM_ACTION = ContactGoogleForm.action;
 
-  //CORS_PROXY
+  // CORS_PROXY
   // const CORS_PROXY = 'https://cors-anywhere.herokuapp.com/';
 
-  //PostのParam生成
+  // //PostのParam生成
   // const submitParams = new FormData();
-  const submitParams = new URLSearchParams()
-  submitParams.append(ContactGoogleForm.name, values.name);
-  submitParams.append(ContactGoogleForm.email, values.email);
-  submitParams.append(ContactGoogleForm.companyorindividual, values.companyorindividual);
-  submitParams.append(ContactGoogleForm.content, values.content);
-  submitParams.append(ContactGoogleForm.privacy, values.privacy);
+  // const submitParams = new URLSearchParams()
+  // submitParams.append(ContactGoogleForm.name, values.name);
+  // submitParams.append(ContactGoogleForm.email, values.email);
+  // submitParams.append(ContactGoogleForm.companyorindividual, values.companyorindividual);
+  // submitParams.append(ContactGoogleForm.content, values.content);
+  // submitParams.append(ContactGoogleForm.privacy, values.privacy);
 
-  //JSONデータをapplication/x-www-form-urlencodedに変える
+  // //JSONデータをapplication/x-www-form-urlencodedに変える
   // const config = {
   //   headers: {
   //     'Content-Type': 'application/x-www-form-urlencoded'
   //   }
   // }
 
-  //実行
-  axios
-  // .post(GOOGLE_FORM_ACTION, submitParams, config)
-  //  .post(CORS_PROXY + GOOGLE_FORM_ACTION, submitParams, config)
-  .post(GOOGLE_FORM_ACTION, submitParams)
-  //  .post(GOOGLE_FORM_ACTION, submitParams)
-   .then(() => {
-     console.log('success');
-   })
-   .catch((error) => {
-     console.log(error);
-   })
+  // //実行
+  // axios
+  // .post(GOOGLE_FORM_ACTION, submitParams)
+  //  .then(() => {
+  //    console.log('success');
+  //  })
+  //  .catch((error) => {
+  //    console.log(error);
+  //  })
 };
 
