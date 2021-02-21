@@ -9,9 +9,12 @@ import {News} from "src/components/news";
 import {Concept2} from "src/components/concept2";
 import {Contact} from "src/components/contact";
 
-export default function IndexPage(){
+export default function IndexPage(): JSX.Element{
   return (
-    <MainLayout>
+    <MainLayout
+      title={`sobolon - 海洋マイクロプラスチックを素材とした ハンドメイドアクセサリー`}
+      description={`sobolonはあらゆる女性に向けて、海洋マイクロプラスチックを素材としたハンドメイドアクセサリーを販売しているオンラインショップです`}
+    >
       <Top />
       <Concept />
       <Feature />

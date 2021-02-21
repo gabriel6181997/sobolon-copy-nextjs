@@ -2,10 +2,11 @@ import { NextSeo } from 'next-seo';
 import { Header } from "src/components/header";
 import { Footer } from "src/components/footer";
 import styles from "src/layouts/main/index.module.scss";
-import React, { useState, useEffect } from "react";
+import React, {useEffect } from "react";
 import Head from "next/head";
+import type {LayoutProps} from "src/layouts/types";
 
-export function MainLayout({ children }) {
+export function MainLayout({ title, description, children }:LayoutProps) : JSX.Element{
   useEffect(() => {
     const wow = require("wow.js");
     new wow().init();
@@ -14,8 +15,8 @@ export function MainLayout({ children }) {
   return (
     <>
       <NextSeo
-        title={`sobolon - 海洋マイクロプラスチックを素材とした ハンドメイドアクセサリー`}
-        description={`sobolonはあらゆる女性に向けて、海洋マイクロプラスチックを素材としたハンドメイドアクセサリーを販売しているオンラインショップです`}
+        title={title}
+        description={description}
         openGraph={{url:`https://sobolon-copy-nextjs.vercel.app/`, images:[{url: "img/ogp.png", alt:"sobolon"}]}}
       />
       <Head>
