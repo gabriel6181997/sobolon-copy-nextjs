@@ -3,7 +3,7 @@ import Link from "next/link";
 import styles from "src/components/header/index.module.scss";
 import utilStyles from "src/styles/utils.module.scss";
 
-const NAVITEMS= [
+const NAVITEMS = [
   {
     link:"/#concept",
     word: "Concept",
@@ -26,7 +26,7 @@ const NAVITEMS= [
   },
 ];
 
-export function Header() {
+export function Header(): JSX.Element {
   return(
     <header className={styles.header}>
     <div className={styles.header_inner}>

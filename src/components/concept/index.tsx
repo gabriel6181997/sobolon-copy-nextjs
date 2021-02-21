@@ -3,7 +3,7 @@ import Link from "next/link";
 import styles from "src/components/concept/index.module.scss";
 import utilStyles from "src/styles/utils.module.scss";
 
-export function Concept(){
+export function Concept(): JSX.Element{
   return(
     <section id="concept" className={`${utilStyles.section} ${utilStyles.inner}`}>
       <h2 className={`${utilStyles.util_title} ${"wow fadeInUp"}`}>Concept</h2>

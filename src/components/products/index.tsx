@@ -24,7 +24,7 @@ const PRODUCTs = [
   }
 ]
 
-export function Products() {
+export function Products():JSX.Element {
   return (
     <section id="products" className={`${styles.products} ${utilStyles.section} ${utilStyles.inner}`}>
       <h2 className={`${utilStyles.util_title} ${"wow fadeInUp"}`}>Products</h2>

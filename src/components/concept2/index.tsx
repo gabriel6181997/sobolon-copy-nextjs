@@ -3,9 +3,9 @@ import Link from "next/link";
 import styles from "src/components/concept2/index.module.scss";
 import utilStyles from "src/styles/utils.module.scss";
 
-export function Concept2() {
+export function Concept2():JSX.Element {
   return (
-    <div className={`${styles.comcept2} ${utilStyles.inner} ${utilStyles.section}`}>
+    <div className={`${styles.concept2} ${utilStyles.inner} ${utilStyles.section}`}>
       <div className={styles.concept2_inner}>
         <picture className={`${styles.picture} ${"wow fadeInUp"}`}>
           <img src="/img/concept-2.png" alt="concept-2" />

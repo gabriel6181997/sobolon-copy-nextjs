@@ -3,7 +3,7 @@ import Link from "next/link";
 import styles from "src/components/about/index.module.scss";
 import utilStyles from "src/styles/utils.module.scss";
 
-export function About() {
+export function About():JSX.Element {
   return (
     <div className={`${styles.about} ${utilStyles.section}`}>
       <div className={`${styles.about_inner} ${utilStyles.inner} ${"wow fadeInUp"}`}>

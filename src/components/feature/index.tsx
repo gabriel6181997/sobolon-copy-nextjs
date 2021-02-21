@@ -21,7 +21,7 @@ const ITEMS = [
  },
 ];
 
-export function Feature() {
+export function Feature():JSX.Element {
   return(
     <section id="feature" className={`${utilStyles.section} ${utilStyles.inner} ${styles.feature}`}>
     <h2 className={`${utilStyles.util_title} ${"wow fadeInUp"}`}>Feature</h2>

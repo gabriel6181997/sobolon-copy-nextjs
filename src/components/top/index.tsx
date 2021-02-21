@@ -5,7 +5,7 @@ import utilStyles from "src/styles/utils.module.scss";
 import Head from "next/head";
 
 
-export function Top(){
+export function Top(): JSX.Element {
   return(
     <section className={`${styles.top} ${utilStyles.inner}`}>
       <div className={`${styles.picture} ${"wow fadeInUp"}`}></div>

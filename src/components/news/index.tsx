@@ -30,7 +30,7 @@ const NEWSITEMS = [
   }
 ];
 
-export function News() {
+export function News():JSX.Element {
   return (
     <section id="news" className={`${utilStyles.section} ${utilStyles.inner} ${styles.news}`}>
       <h2 className={`${utilStyles.util_title} ${"wow fadeInUp"}`}>News</h2>
