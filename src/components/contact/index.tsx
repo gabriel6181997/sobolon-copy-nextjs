@@ -6,18 +6,9 @@ import Link from "next/link";
 import styles from "src/components/contact/index.module.scss";
 import utilStyles from "src/styles/utils.module.scss";
 
-// const ContactGoogleForm = {
-//   action: "https://docs.google.com/forms/u/0/d/e/1FAIpQLSfiL42i6OxLVJb8vaDM5dNqdUa699CEpbMKsSqArbSinup7_Q/formResponse",
-//   name:"entry.1460987795",
-//   email:"entry.647609485",
-//   companyorindividual:"entry.645145015",
-//   content:"entry.1262385918",
-//   privacy:"entry.1942533298",
-// };
-
 const options = ['法人','個人'];
 
-export function Contact() {
+export function Contact():JSX.Element {
   const { register , handleSubmit} = useForm({
     mode:'onChange',
   });
@@ -100,7 +91,7 @@ export function Contact() {
             <Link href="/">
               <a
                 className={styles.privacy_link}
-                value={'プライバシーポリシーの同意'}
+                value={`プライバシーポリシーの同意`}
               >
                 プライバシーポリシー
               </a>
@@ -129,35 +120,5 @@ export function Contact() {
 
 const onSubmit = (values) => {
   console.log(values)
-  // const GOOGLE_FORM_ACTION = ContactGoogleForm.action;
-
-  // CORS_PROXY
-  // const CORS_PROXY = 'https://cors-anywhere.herokuapp.com/';
-
-  // //PostのParam生成
-  // const submitParams = new FormData();
-  // const submitParams = new URLSearchParams()
-  // submitParams.append(ContactGoogleForm.name, values.name);
-  // submitParams.append(ContactGoogleForm.email, values.email);
-  // submitParams.append(ContactGoogleForm.companyorindividual, values.companyorindividual);
-  // submitParams.append(ContactGoogleForm.content, values.content);
-  // submitParams.append(ContactGoogleForm.privacy, values.privacy);
-
-  // //JSONデータをapplication/x-www-form-urlencodedに変える
-  // const config = {
-  //   headers: {
-  //     'Content-Type': 'application/x-www-form-urlencoded'
-  //   }
-  // }
-
-  // //実行
-  // axios
-  // .post(GOOGLE_FORM_ACTION, submitParams)
-  //  .then(() => {
-  //    console.log('success');
-  //  })
-  //  .catch((error) => {
-  //    console.log(error);
-  //  })
 };
 
