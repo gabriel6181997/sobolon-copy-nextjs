@@ -10,6 +10,7 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.2",
     "axios": "^0.21.1",
+    "firebase": "^8.2.9",
     "next": "10.0.5",
     "next-images": "^1.7.0",
     "next-seo": "^4.19.0",
