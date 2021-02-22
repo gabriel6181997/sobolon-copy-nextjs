@@ -1,12 +1,19 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
-import axios from 'axios';
 import Image from "next/image";
 import Link from "next/link";
 import styles from "src/components/contact/index.module.scss";
 import utilStyles from "src/styles/utils.module.scss";
 
 const options = ['法人','個人'];
+
+type FormData = {
+  name: string;
+  email:string;
+  companyorindividual:string;
+  content:string;
+  privacy:unknown;
+}
 
 export function Contact():JSX.Element {
   const { register , handleSubmit} = useForm({
@@ -91,7 +98,7 @@ export function Contact():JSX.Element {
             <Link href="/">
               <a
                 className={styles.privacy_link}
-                value={`プライバシーポリシーの同意`}
+                value ={`プライバシーポリシーの同意`}
               >
                 プライバシーポリシー
               </a>
@@ -118,7 +125,7 @@ export function Contact():JSX.Element {
   );
 }
 
-const onSubmit = (values) => {
+const onSubmit = (values:FormData) => {
   console.log(values)
 };
 
