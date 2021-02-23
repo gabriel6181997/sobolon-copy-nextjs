@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "src/components/contact/index.module.scss";
 import utilStyles from "src/styles/utils.module.scss";
+import {formdataRef} from "src/firebase";
 
 const options = ['法人','個人'];
 
@@ -19,6 +20,11 @@ export function Contact():JSX.Element {
   const { register , handleSubmit} = useForm({
     mode:'onChange',
   });
+
+  const onSubmit = (values:FormData) => {
+    console.log(values);
+    formdataRef.push(values);
+  };
 
   return (
     <section id="contact" className={styles.contact}>
@@ -37,6 +43,7 @@ export function Contact():JSX.Element {
             <dd className={styles.item_input}>
               <input type={'text'} name={'name'}
               ref={register ({required: true})}
+
               />
             </dd>
           </div>
@@ -125,8 +132,4 @@ export function Contact():JSX.Element {
     </section>
   );
 }
-
-const onSubmit = (values:FormData) => {
-  console.log(values);
-};
 
