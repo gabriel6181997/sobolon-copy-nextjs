@@ -4,9 +4,16 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "src/components/contact/index.module.scss";
 import utilStyles from "src/styles/utils.module.scss";
-import type {FormData} from "src/layouts/types";
 
 const options = ['法人','個人'];
+
+type FormData = {
+  name: string;
+  email:string;
+  companyorindividual:string;
+  content:string;
+  privacy:unknown;
+}
 
 export function Contact():JSX.Element {
   const { register , handleSubmit} = useForm({
@@ -98,7 +105,7 @@ export function Contact():JSX.Element {
             </Link>
             に同意します。
           </p>
-          
+
           <div className={styles.footer_submit}>
             <button
               className={utilStyles.util_link}
@@ -120,6 +127,6 @@ export function Contact():JSX.Element {
 }
 
 const onSubmit = (values:FormData) => {
-  console.log(values)
+  console.log(values);
 };
 

@@ -14,8 +14,8 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 const database = firebase.database();
-const formDataRef = database.ref('formdata')
+// const formDataRef = database.ref('formdata')
 
-export const pushFormData = ({name, email, companyorindividual, content, privacy}:FormData) => {
-  formDataRef.push({name, email, companyorindividual, content, privacy})
-}
+// export const pushFormData = ({name, email, companyorindividual, content, privacy}:FormData) => {
+//   formDataRef.push({name, email, companyorindividual, content, privacy})
+// }
