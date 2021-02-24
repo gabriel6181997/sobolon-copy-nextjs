@@ -105,7 +105,6 @@ export function Contact():JSX.Element {
             <Link href="/">
               <a
                 className={styles.privacy_link}
-                value ={`プライバシーポリシーの同意`}
               >
                 プライバシーポリシー
               </a>
